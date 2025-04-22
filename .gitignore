@@ -101,6 +101,7 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+*.sln
 
 # Chutzpah Test files
 _Chutzpah*
@@ -121,6 +122,17 @@ ipch/
 *.vsp
 *.vspx
 *.sap
+
+# HW_Rpg_02 내부의 빌드 폴더 무시
+HW_Rpg_02/x64/
+HW_Rpg_02/Debug/
+HW_Rpg_02/Release/
+
+# Visual Studio 프로젝트 파일 무시
+HW_Rpg_02/*.vcxproj
+HW_Rpg_02/*.vcxproj.user
+HW_Rpg_02/*.vcxproj.filters
+
 
 # Visual Studio Trace Files
 *.e2e
