@@ -17,10 +17,10 @@ public:
 public:
 	static CSave* Create();
 
+public:
 	DATA* Get_tDataArray() { return m_tDataArray; }
 	ITEM* Get_m_tInventory() { return m_tInventory; }
 	int Get_m_iSavedMoney() { return m_iSavedMoney; }
-
 
 public:
 	DATA* CheckSaveFile();

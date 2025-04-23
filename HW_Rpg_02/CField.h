@@ -21,6 +21,7 @@ public:
 	static CField* Create();
 	static CField* Create(CSave* _pSave);
 
+public:
 	void Set_pPlayerCopy(CPlayer* _pPlayer) { m_pPlayerCopy = _pPlayer; };
 	void Set_pMonsterFromSaveFile();
 
