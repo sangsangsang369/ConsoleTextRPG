@@ -3,16 +3,16 @@
 CMonster::CMonster()
 {
 	m_tData = {};
-	m_cMonsterName[0] = "초급";
-	m_cMonsterName[1] = "중급";
-	m_cMonsterName[2] = "고급";
+	m_cMonsterName[0] = g_cMonsterNameArray[0];
+	m_cMonsterName[1] = g_cMonsterNameArray[1];
+	m_cMonsterName[2] = g_cMonsterNameArray[2];
 }
 
 CMonster::CMonster(DATA _tMonster)
 {
-	m_cMonsterName[0] = "초급";
-	m_cMonsterName[1] = "중급";
-	m_cMonsterName[2] = "고급";
+	m_cMonsterName[0] = g_cMonsterNameArray[0];
+	m_cMonsterName[1] = g_cMonsterNameArray[1];
+	m_cMonsterName[2] = g_cMonsterNameArray[2];
 	m_tData.iName = _tMonster.iName;
 	m_tData.iHealth = _tMonster.iHealth;
 	m_tData.iAttackPower = _tMonster.iAttackPower;
@@ -20,9 +20,9 @@ CMonster::CMonster(DATA _tMonster)
 
 CMonster::CMonster(int _iName, int _iHealth, int _iAttackPower)
 {
-	m_cMonsterName[0] = "초급";
-	m_cMonsterName[1] = "중급";
-	m_cMonsterName[2] = "고급";
+	m_cMonsterName[0] = g_cMonsterNameArray[0];
+	m_cMonsterName[1] = g_cMonsterNameArray[1];
+	m_cMonsterName[2] = g_cMonsterNameArray[2];
 	m_tData.iName = _iName;
 	m_tData.iHealth = _iHealth;
 	m_tData.iAttackPower = _iAttackPower;

@@ -114,21 +114,22 @@ int CField::Fight()
 		switch (iInput)
 		{
 		case(1):
-			m_pPlayerCopy->GetDamage(m_pMonster->GetData().iAttackPower);
-			m_pMonster->GetDamage(m_pPlayerCopy->GetData().iAttackPower);
+			m_pPlayerCopy->GetDamage(m_pMonster->Get_m_tData().iAttackPower);
+			m_pMonster->GetDamage(m_pPlayerCopy->Get_m_tData().iAttackPower);
 
-			if (m_pPlayerCopy->GetData().iHealth <= 0)
+			if (m_pPlayerCopy->Get_m_tData().iHealth <= 0)
 			{
 				cout << "»ç¸Á" << endl;
 				system("pause");
 
 				return 0;
 			}
-			if (m_pMonster->GetData().iHealth <= 0)
+			if (m_pMonster->Get_m_tData().iHealth <= 0)
 			{
 				cout << "½Â¸®" << endl;
+				cout << m_pMonster->Get_m_tData().iAttackPower * MONEY_WEIGHT << "¸Ó´Ï È¹µæ" << endl << endl;
 				system("pause");
-
+				m_pPlayerCopy->GetMoney(m_pMonster->Get_m_tData().iAttackPower * MONEY_WEIGHT);
 				return 1;
 			}
 			break;
@@ -136,13 +137,12 @@ int CField::Fight()
 			return 2;
 			break;
 		case(3):
-			m_pSaveCopy->Save(m_pPlayerCopy->GetData(), m_pMonster->GetData());
+			m_pSaveCopy->Save(m_pPlayerCopy, m_pMonster->Get_m_tData());
 			break;
 
 		default:
 			break;
 		}
 	}
-	
 }
 

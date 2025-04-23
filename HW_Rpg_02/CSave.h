@@ -5,8 +5,10 @@
 class CSave
 {
 private:
-	FILE* pFile;
-	DATA tDataArray[3];
+	FILE* m_pFile;
+	DATA m_tDataArray[3];
+	ITEM m_tInventory[ALL_ITEM_TYPE_NUM];
+	int m_iSavedMoney;
 
 public:
 	CSave();
@@ -15,10 +17,13 @@ public:
 public:
 	static CSave* Create();
 
-	DATA* Get_tDataArray() { return tDataArray; }
+	DATA* Get_tDataArray() { return m_tDataArray; }
+	ITEM* Get_m_tInventory() { return m_tInventory; }
+	int Get_m_iSavedMoney() { return m_iSavedMoney; }
+
 
 public:
 	DATA* CheckSaveFile();
-	void Save(DATA _tPlayer, DATA _tMonster);
+	void Save(CPlayer* _pCPlayer, DATA _tMonster);
 };
 

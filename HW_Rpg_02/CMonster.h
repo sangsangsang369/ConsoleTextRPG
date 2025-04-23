@@ -19,7 +19,7 @@ public:
 	static CMonster* Create(DATA _tMonster);
 	static CMonster* Create(int _iName, int _iHealth, int _iAttackPower);
 
-	DATA GetData() const { return m_tData; }
+	DATA Get_m_tData() const { return m_tData; }
 	void GetDamage(int _iAttack) { m_tData.iHealth -= _iAttack; }
 
 public:
