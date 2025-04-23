@@ -19,11 +19,23 @@ CField::~CField()
 	Release();
 }
 
+CField* CField::Create()
+{
+	CField* pCField = new CField();
+	return pCField;
+}
+
+CField* CField::Create(CSave* _pSave)
+{
+	CField* pCField = new CField(_pSave);
+	return pCField;
+}
+
 void CField::Set_pMonsterFromSaveFile()
 {
 	if (m_pSaveCopy)
 	{
-		m_pMonster = new CMonster(m_pSaveCopy->Get_tDataArray()[1]);
+		m_pMonster = CMonster::Create(m_pSaveCopy->Get_tDataArray()[1]);
 	}
 }
 
@@ -51,7 +63,7 @@ void CField::Update()
 			case(1):
 			case(2):
 			case(3):
-				m_pMonster = new CMonster(iInput - 1, 30 * iInput, 3 * iInput);
+				m_pMonster = CMonster::Create(iInput - 1, 30 * iInput, 3 * iInput);
 				break;
 			case(4):
 				return;

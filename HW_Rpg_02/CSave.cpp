@@ -9,6 +9,12 @@ CSave::~CSave()
 {
 }
 
+CSave* CSave::Create()
+{
+	CSave* pCSave = new CSave();
+	return pCSave;
+}
+
 DATA* CSave::CheckSaveFile()
 {
 	errno_t err = fopen_s(&pFile, "../Data/SaveFile.txt", "rb");

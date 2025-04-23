@@ -17,20 +17,20 @@ void CMainGame::Initialize()
 {
 	if (!m_pSave)
 	{
-		m_pSave = new CSave();
+		m_pSave = CSave::Create();
 	}
-	DATA* pSaveExist = m_pSave->CheckSaveFile();
+	DATA* tDataArray = m_pSave->CheckSaveFile();
 
-	if (pSaveExist != nullptr)
+	if (tDataArray != nullptr)
 	{
 		if (!m_pPlayer)
 		{
-			m_pPlayer = new CPlayer(pSaveExist[0]);
+			m_pPlayer = CPlayer::Create(tDataArray[0]);
 		}
 
 		if (!m_pField)
 		{
-			m_pField = new CField(m_pSave);
+			m_pField = CField::Create(m_pSave);
 		}
 		m_pField->Set_pPlayerCopy(m_pPlayer);
 		m_pField->Set_pMonsterFromSaveFile();
@@ -39,13 +39,13 @@ void CMainGame::Initialize()
 	{
 		if (!m_pPlayer)
 		{
-			m_pPlayer = new CPlayer();
+			m_pPlayer = CPlayer::Create();
 		}	
 		m_pPlayer->SelectJob();
 
 		if (!m_pField)
 		{
-			m_pField = new CField(m_pSave);
+			m_pField = CField::Create(m_pSave);
 		}	
 		m_pField->Set_pPlayerCopy(m_pPlayer);
 	}

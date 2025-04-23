@@ -12,6 +12,9 @@ public:
 	CSave();
 	~CSave();
 
+public:
+	static CSave* Create();
+
 	DATA* Get_tDataArray() { return tDataArray; }
 
 public:

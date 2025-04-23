@@ -23,6 +23,18 @@ CPlayer::~CPlayer()
 {
 }
 
+CPlayer* CPlayer::Create()
+{
+	CPlayer* pCPlayer = new CPlayer();
+	return pCPlayer;
+}
+
+CPlayer* CPlayer::Create(DATA _tPlayer)
+{
+	CPlayer* pCPlayer = new CPlayer(_tPlayer);
+	return pCPlayer;
+}
+
 void CPlayer::Render() const
 {
 	cout << "=====================================" << endl;
