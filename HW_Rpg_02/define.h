@@ -45,8 +45,12 @@ static ITEM g_tItemArray[ALL_ITEM_TYPE_NUM] = {
 
 enum OBJECT_TYPE {
 	PLAYER = 1,
-	MONSTER,
-	END
+	MONSTER
+};
+
+enum ITEM_TYPE {
+	POTION = 1,
+	AMPLIFIER
 };
 
 #pragma once

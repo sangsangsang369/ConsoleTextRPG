@@ -3,9 +3,6 @@
 
 class CMonster : public CObject
 {
-private:
-	//const char* m_cMonsterName[NAME_ARRAY_SIZE];
-
 public:
 	CMonster();
 	CMonster(DATA _tMonster);
