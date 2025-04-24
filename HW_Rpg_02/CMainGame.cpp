@@ -80,7 +80,7 @@ void CMainGame::Update()
 		}
 		else
 		{
-			m_pPlayer->Render();
+			m_pPlayer->Render(PLAYER);
 
 			cout << "1. 사냥터 2. 상점 3. 종료 : ";
 			cin >> iInput;

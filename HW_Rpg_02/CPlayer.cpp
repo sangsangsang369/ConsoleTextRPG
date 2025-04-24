@@ -2,7 +2,6 @@
 
 CPlayer::CPlayer()
 {
-	m_tData = {};
 	for (int i = 0; i < ALL_ITEM_TYPE_NUM; i++)
 	{
 		m_tInventory[i] = g_tItemArray[i];
@@ -39,13 +38,6 @@ CPlayer* CPlayer::Create(DATA _tPlayer, ITEM* _pInventory, int _iMoney)
 	return pCPlayer;
 }
 
-void CPlayer::Render() const
-{
-	cout << "=====================================" << endl;
-	cout << "이름 : " << g_cPlayerNameArray[m_tData.iName] << endl;
-	cout << "체력 : " << m_tData.iHealth << "  공격력 : " << m_tData.iAttackPower << endl;
-	cout << "캐시 : " << m_iMoney << endl;
-}
 
 void CPlayer::RenderInventory() const
 {
@@ -56,7 +48,7 @@ void CPlayer::RenderInventory() const
 	for (int i = 0; i < ALL_ITEM_TYPE_NUM; i++)
 	{
 		cout << "=====================================" << endl;
-		cout << g_cItemNameArray[i] << endl;
+		cout << i+1 << ". " << g_cItemNameArray[i] << endl;
 		cout << "소지 갯수 : " << m_tInventory[i].iNumInInventory << endl;
 	}
 }

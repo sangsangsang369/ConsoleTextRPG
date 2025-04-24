@@ -52,7 +52,7 @@ void CField::Update()
 		if (!m_pMonster)
 		{
 			do {
-				m_pPlayerCopy->Render();
+				m_pPlayerCopy->Render(PLAYER);
 				cout << "1. 초급 2. 중급 3. 고급 4. 전 단계 : ";
 				cin >> iInput;
 				system("cls");
@@ -105,12 +105,13 @@ int CField::Fight()
 
 		int iInput(0);
 		do {
-			m_pPlayerCopy->Render();
-			m_pMonster->Render();
-			cout << "1. 공격 2. 도망 3. 저장: ";
+			m_pPlayerCopy->Render(PLAYER);
+			m_pMonster->Render(MONSTER);
+			cout << "1. 공격 2. 도망 3. 저장 4. 아이템: ";
 			cin >> iInput;
-		} while (iInput < 1 || iInput > 3);
+		} while (iInput < 1 || iInput > 4);
 
+		int iItemNum(0);
 		switch (iInput)
 		{
 		case(1):
@@ -139,7 +140,25 @@ int CField::Fight()
 		case(3):
 			m_pSaveCopy->Save(m_pPlayerCopy, m_pMonster->Get_m_tData());
 			break;
+		case(4):
+			m_pPlayerCopy->RenderInventory();
+			cout << "사용하고자 하는 아이템의 번호를 입력하시오 : ";
+			cin >> iItemNum;
 
+			switch (iItemNum)
+			{
+			case(1):
+				m_pPlayerCopy->Minus_m_tInventory_ItemNum(iItemNum - 1);
+				m_pPlayerCopy->PlusHealth(g_tItemArray[iItemNum - 1].iWeight);
+				break;
+			case(2):
+				m_pPlayerCopy->Minus_m_tInventory_ItemNum(iItemNum - 1);
+				m_pPlayerCopy->PlusAttackPower(g_tItemArray[iItemNum - 1].iWeight);
+				break;
+			default:
+				break;
+			}
+			break;
 		default:
 			break;
 		}

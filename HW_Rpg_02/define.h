@@ -5,6 +5,7 @@
 #define ALL_ITEM_TYPE_NUM 2
 #define MONEY_WEIGHT 10
 
+
 typedef struct tagInfo
 {
 	int		iName;
@@ -38,10 +39,14 @@ static const char* g_cItemNameArray[ALL_ITEM_TYPE_NUM] = {
 };
 
 static ITEM g_tItemArray[ALL_ITEM_TYPE_NUM] = {
-	{0,30,30,0},
-	{1,40,40,0}
+	{0,30,20,0},
+	{1,40,20,0}
 };
 
-
+enum OBJECT_TYPE {
+	PLAYER = 1,
+	MONSTER,
+	END
+};
 
 #pragma once

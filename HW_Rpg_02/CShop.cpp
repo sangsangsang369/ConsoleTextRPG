@@ -46,7 +46,7 @@ void CShop::Update()
 			if (m_pPlayerCopy->Get_m_iMoney() >= m_tItemArrayInShop[iItemInput - 1].iCost)
 			{
 				m_pPlayerCopy->SpendMoney(m_tItemArrayInShop[iItemInput-1].iCost);
-				m_pPlayerCopy->Set_m_tInventory_ItemNum(iItemInput - 1);
+				m_pPlayerCopy->Plus_m_tInventory_ItemNum(iItemInput - 1);
 				cout << "구매 완료" << endl;
 				system("pause");
 			}
