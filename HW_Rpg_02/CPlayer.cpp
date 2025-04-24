@@ -41,13 +41,13 @@ CPlayer* CPlayer::Create(DATA _tPlayer, ITEM* _pInventory, int _iMoney)
 
 void CPlayer::RenderInventory() const
 {
-	g_RenderLine(LOGO_WINDOW_W);
+	g_RenderLine(SCREEN_W);
 	cout << "인벤토리" << endl;
-	g_RenderLine(LOGO_WINDOW_W);
+	g_RenderLine(SCREEN_W);
 	cout << "캐시 : " << m_iMoney << endl;
 	for (int i = 0; i < ALL_ITEM_TYPE_NUM; i++)
 	{
-		g_RenderLine(LOGO_WINDOW_W);
+		g_RenderLine(SCREEN_W);
 		cout << i+1 << ". " << g_cItemNameArray[i] << endl;
 		cout << "소지 갯수 : " << m_tInventory[i].iNumInInventory << endl;
 	}
@@ -58,12 +58,12 @@ void CPlayer::SelectJob()
 	system("cls");
 
 	int iInput(0);
-	g_RenderLine(LOGO_WINDOW_W);
-	for (int i = 0; i < ICON_WINDOW_H; i++)
+	g_RenderLine(SCREEN_W);
+	for (int i = 0; i < ICON_H; i++)
 	{
-		cout << "       " << KnifeIconGraphic[i] << "    " << HatIconGraphic[i] << "    " << ThiefIconGraphic[i] << endl;
+		cout << "   " << KnifeIconGraphic[i] << "    " << HatIconGraphic[i] << "    " << ThiefIconGraphic[i] << endl;
 	}
-	g_RenderLine(LOGO_WINDOW_W);
+	g_RenderLine(SCREEN_W);
 	do {
 		cout << "직업을 선택하세요(1. 전사 2. 마법사 3. 도적) : ";
 		cin >> iInput;

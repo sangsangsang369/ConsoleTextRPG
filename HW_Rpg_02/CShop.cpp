@@ -32,10 +32,10 @@ void CShop::Update()
 	{
 		system("cls");
 		Render();
-		g_RenderLine(LOGO_WINDOW_W);
+		g_RenderLine(SCREEN_W);
 		cout << endl;
 		m_pPlayerCopy->RenderInventory();
-		g_RenderLine(LOGO_WINDOW_W);
+		g_RenderLine(SCREEN_W);
 		cout << "1. 구매 2. 나가기 :";
 		cin >> iInput;
 
@@ -72,11 +72,11 @@ void CShop::Release()
 
 void CShop::Render() const
 {
-	g_RenderLine(LOGO_WINDOW_W);
+	g_RenderLine(SCREEN_W);
 	cout << "상점" << endl;
 	for (int i = 0; i < ALL_ITEM_TYPE_NUM; i++)
 	{
-		g_RenderLine(LOGO_WINDOW_W);
+		g_RenderLine(SCREEN_W);
 		cout << i+1 << ". " << g_cItemNameArray[i] << endl;
 		cout << "가격 : " << m_tItemArrayInShop[i].iCost << endl;
 	}

@@ -16,14 +16,14 @@ CHome* CHome::Create()
 
 void CHome::Initialize()
 {
-	g_RenderLine(LOGO_WINDOW_W);
+	g_RenderLine(SCREEN_W);
 	cout << endl;
-	for (int i = 0; i < LOGO_WINDOW_H; i++)
+	for (int i = 0; i < LOGO_H; i++)
 	{
 		cout << LogoGraphic[i] << endl;
 	}
 	cout << endl;
-	g_RenderLine(LOGO_WINDOW_W);
+	g_RenderLine(SCREEN_W);
 	cout << "시작하려면 아무 키나 누르십시오.." << endl;
 	cin.ignore();
 }

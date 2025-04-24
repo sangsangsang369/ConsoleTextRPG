@@ -10,13 +10,13 @@ void CObject::Render(int _iType) const
 	switch (_iType)
 	{
 	case(PLAYER):
-		g_RenderLine(LOGO_WINDOW_W);
+		g_RenderLine(SCREEN_W);
 		cout << "이름 : " << g_cPlayerNameArray[m_tData.iName] << endl;
 		cout << "체력 : " << m_tData.iHealth << "  공격력 : " << m_tData.iAttackPower << endl;
 		//cout << "캐시 : " << m_iMoney << endl;
 		break;
 	case(MONSTER):
-		g_RenderLine(LOGO_WINDOW_W);
+		g_RenderLine(SCREEN_W);
 		cout << "이름 : " << g_cMonsterNameArray[m_tData.iName] << endl;
 		cout << "체력 : " << m_tData.iHealth << "  공격력 : " << m_tData.iAttackPower << endl;
 		break;
