@@ -52,5 +52,3 @@ enum ITEM_TYPE {
 	POTION = 1,
 	AMPLIFIER
 };
-
-#pragma once

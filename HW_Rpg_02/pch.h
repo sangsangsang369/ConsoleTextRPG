@@ -9,6 +9,7 @@
 #define PCH_H
 
 #include <iostream>
+#include "graphic.h"
 
 using namespace std;
 

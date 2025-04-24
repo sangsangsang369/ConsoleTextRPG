@@ -2,6 +2,9 @@
 #include "pch.h"
 #include "define.h"
 
+// 전역함수
+//extern void g_RenderLine(int _iNum);
+
 class CObject
 {
 protected:

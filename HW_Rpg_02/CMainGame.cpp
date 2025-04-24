@@ -6,6 +6,7 @@ CMainGame::CMainGame()
 	m_pField = nullptr;
 	m_pShop = nullptr;
 	m_pSave = nullptr;
+
 	m_bFirstCheck = false;
 	m_tDataArray = nullptr;
 }
@@ -17,6 +18,12 @@ CMainGame::~CMainGame()
 
 void CMainGame::Initialize()
 {
+	if (!m_pHome)
+	{
+		m_pHome = CHome::Create();
+	}
+	m_pHome->Initialize();
+
 	if (!m_pSave)
 	{
 		m_pSave = CSave::Create();
@@ -108,6 +115,7 @@ void CMainGame::Update()
 void CMainGame::Release()
 {
 	SAFE_DELETE(m_pPlayer);
+	SAFE_DELETE(m_pHome);
 	SAFE_DELETE(m_pField);
 	SAFE_DELETE(m_pShop);
 	SAFE_DELETE(m_pSave);
