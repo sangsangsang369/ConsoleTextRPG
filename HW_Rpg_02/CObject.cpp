@@ -5,22 +5,39 @@ CObject::CObject()
 	m_tData = {};
 }
 
-void CObject::Render(int _iType) const
+CObject::CObject(DATA _tObject)
 {
-	switch (_iType)
-	{
-	case(PLAYER):
-		g_RenderLine(SCREEN_W);
-		cout << "이름 : " << g_cPlayerNameArray[m_tData.iName] << endl;
-		cout << "체력 : " << m_tData.iHealth << "  공격력 : " << m_tData.iAttackPower << endl;
-		//cout << "캐시 : " << m_iMoney << endl;
-		break;
-	case(MONSTER):
-		g_RenderLine(SCREEN_W);
-		cout << "이름 : " << g_cMonsterNameArray[m_tData.iName] << endl;
-		cout << "체력 : " << m_tData.iHealth << "  공격력 : " << m_tData.iAttackPower << endl;
-		break;
-	default:
-		break;
-	}
+	m_tData.iName = _tObject.iName;
+	m_tData.iHealth = _tObject.iHealth;
+	m_tData.iAttackPower = _tObject.iAttackPower;
+}
+
+CObject::CObject(DATA _tObject, ITEM* _pInventory, int _iMoney)
+{
+	m_tData.iName = _tObject.iName;
+	m_tData.iHealth = _tObject.iHealth;
+	m_tData.iAttackPower = _tObject.iAttackPower;
+}
+
+CObject::CObject(int _iName, int _iHealth, int _iAttackPower)
+{
+	m_tData.iName = _iName;
+	m_tData.iHealth = _iHealth;
+	m_tData.iAttackPower = _iAttackPower;
+}
+
+CObject::~CObject()
+{
+}
+
+void CObject::Render() const
+{
+}
+
+void CObject::RenderInventory() const
+{
+}
+
+void CObject::SelectJob()
+{
 }

@@ -52,7 +52,7 @@ void CField::Update()
 		if (!m_pMonster)
 		{
 			do {
-				m_pPlayerCopy->Render(PLAYER);
+				m_pPlayerCopy->Render();
 				cout << "1. 초급 2. 중급 3. 고급 4. 전 단계 : ";
 				cin >> iInput;
 				system("cls");
@@ -80,10 +80,13 @@ void CField::Update()
 		case(0):
 			m_pPlayerCopy->SetHealth(100);
 			SAFE_DELETE(m_pMonster);
+			break;
 		case(1):
 			SAFE_DELETE(m_pMonster);
+			break;
 		case(2):
 			SAFE_DELETE(m_pMonster);
+			break;
 		default:
 			break;
 		}
@@ -105,8 +108,8 @@ int CField::Fight()
 
 		int iInput(0);
 		do {
-			m_pPlayerCopy->Render(PLAYER);
-			m_pMonster->Render(MONSTER);
+			m_pPlayerCopy->Render();
+			m_pMonster->Render();
 			cout << "1. 공격 2. 도망 3. 저장 4. 아이템: ";
 			cin >> iInput;
 		} while (iInput < 1 || iInput > 4);
@@ -145,7 +148,7 @@ int CField::Fight()
 			{
 				do {
 					system("cls");
-					m_pPlayerCopy->Render(PLAYER);
+					m_pPlayerCopy->Render();
 					m_pPlayerCopy->RenderInventory();
 					cout << "사용하고자 하는 아이템의 번호를 입력하시오. (나가기 : 0) : ";
 					cin >> iItemNum;

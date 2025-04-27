@@ -1,13 +1,13 @@
 #pragma once
 #include "pch.h"
 #include "define.h"
-#include "CPlayer.h"
+#include "CObject.h"
 
 class CShop
 {
 private:
 	ITEM m_tItemArrayInShop[ALL_ITEM_TYPE_NUM];
-	CPlayer* m_pPlayerCopy;
+	CObject* m_pPlayerCopy;
 
 public:
 	CShop();
@@ -15,7 +15,7 @@ public:
 
 public:
 	static CShop* Create();
-	void Set_pPlayerCopy(CPlayer* _pPlayer) { m_pPlayerCopy = _pPlayer; };
+	void Set_pPlayerCopy(CObject* _pPlayer) { m_pPlayerCopy = _pPlayer; };
 
 public:
 	void	Initialize();

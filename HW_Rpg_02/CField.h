@@ -8,8 +8,8 @@
 class CField
 {
 private:
-	CPlayer* m_pPlayerCopy;
-	CMonster* m_pMonster;
+	CObject* m_pPlayerCopy;
+	CObject* m_pMonster;
 	CSave* m_pSaveCopy;
 
 public:
@@ -22,7 +22,7 @@ public:
 	static CField* Create(CSave* _pSave);
 
 public:
-	void Set_pPlayerCopy(CPlayer* _pPlayer) { m_pPlayerCopy = _pPlayer; };
+	void Set_pPlayerCopy(CObject* _pPlayer) { m_pPlayerCopy = _pPlayer; };
 	void Set_pMonsterFromSaveFile();
 
 public:

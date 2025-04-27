@@ -9,11 +9,9 @@ CPlayer::CPlayer()
 	m_iMoney = 0;
 }
 
-CPlayer::CPlayer(DATA _tPlayer, ITEM* _pInventory, int _iMoney)
+CPlayer::CPlayer(DATA _tObject, ITEM* _pInventory, int _iMoney)
+	:CObject(_tObject, _pInventory, _iMoney)
 {
-	m_tData.iName = _tPlayer.iName;
-	m_tData.iHealth = _tPlayer.iHealth;
-	m_tData.iAttackPower = _tPlayer.iAttackPower;
 	for (int i = 0; i < ALL_ITEM_TYPE_NUM; i++)
 	{
 		m_tInventory[i] = _pInventory[i];
@@ -26,18 +24,25 @@ CPlayer::~CPlayer()
 {
 }
 
-CPlayer* CPlayer::Create()
+CObject* CPlayer::Create()
 {
-	CPlayer* pCPlayer = new CPlayer();
+	CObject* pCPlayer = new CPlayer();
 	return pCPlayer;
 }
 
-CPlayer* CPlayer::Create(DATA _tPlayer, ITEM* _pInventory, int _iMoney)
+CObject* CPlayer::Create(DATA _tObject, ITEM* _pInventory, int _iMoney)
 {
-	CPlayer* pCPlayer = new CPlayer(_tPlayer, _pInventory, _iMoney);
+	CObject* pCPlayer = new CPlayer(_tObject, _pInventory, _iMoney);
 	return pCPlayer;
 }
 
+void CPlayer::Render() const
+{
+	g_RenderLine(SCREEN_W);
+	cout << "이름 : " << g_cPlayerNameArray[m_tData.iName] << endl;
+	cout << "체력 : " << m_tData.iHealth << "  공격력 : " << m_tData.iAttackPower << endl;
+	cout << "캐시 : " << m_iMoney << endl;
+}
 
 void CPlayer::RenderInventory() const
 {

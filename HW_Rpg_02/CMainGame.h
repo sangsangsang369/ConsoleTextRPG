@@ -1,6 +1,7 @@
 #pragma once
 #include "CPlayer.h"
 #include "CHome.h"
+#include "CObject.h"
 #include "CField.h"
 #include "CShop.h"
 #include "CSave.h"
@@ -8,7 +9,7 @@
 class CMainGame
 {
 private:
-	CPlayer* m_pPlayer;
+	CObject* m_pPlayer;
 	CHome* m_pHome;
 	CField* m_pField;
 	CShop* m_pShop;

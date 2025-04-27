@@ -50,7 +50,7 @@ DATA* CSave::CheckSaveFile()
 	}
 }
 
-void CSave::Save(CPlayer* _pCPlayer, DATA _tMonster)
+void CSave::Save(CObject* _pCPlayer, DATA _tMonster)
 {
 	m_pFile = nullptr;
 	m_tDataArray[0] = _pCPlayer->Get_m_tData();

@@ -1,6 +1,5 @@
 #pragma once
-#include "CPlayer.h"
-#include "CMonster.h"
+#include "CObject.h"
 
 class CSave
 {
@@ -24,6 +23,6 @@ public:
 
 public:
 	DATA* CheckSaveFile();
-	void Save(CPlayer* _pCPlayer, DATA _tMonster);
+	void Save(CObject* _pCPlayer, DATA _tMonster);
 };
 
