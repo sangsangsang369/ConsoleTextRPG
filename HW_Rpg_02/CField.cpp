@@ -78,7 +78,7 @@ void CField::Update()
 		switch (iResult)
 		{
 		case(0):
-			m_pPlayerCopy->SetHealth(100);
+			m_pPlayerCopy->ResetHealth(100);
 			SAFE_DELETE(m_pMonster);
 			break;
 		case(1):
@@ -118,8 +118,8 @@ int CField::Fight()
 		switch (iInput)
 		{
 		case(1):
-			m_pPlayerCopy->GetDamage(m_pMonster->Get_m_tData().iAttackPower);
-			m_pMonster->GetDamage(m_pPlayerCopy->Get_m_tData().iAttackPower);
+			m_pPlayerCopy->MinusHealthByAttack(m_pMonster->Get_m_tData().iAttackPower);
+			m_pMonster->MinusHealthByAttack(m_pPlayerCopy->Get_m_tData().iAttackPower);
 
 			if (m_pPlayerCopy->Get_m_tData().iHealth <= 0)
 			{
@@ -133,7 +133,7 @@ int CField::Fight()
 				cout << "승리" << endl;
 				cout << m_pMonster->Get_m_tData().iAttackPower * MONEY_WEIGHT << "머니 획득" << endl << endl;
 				system("pause");
-				m_pPlayerCopy->GetMoney(m_pMonster->Get_m_tData().iAttackPower * MONEY_WEIGHT);
+				m_pPlayerCopy->Get_m_pInventory()->PlusMoney(m_pMonster->Get_m_tData().iAttackPower * MONEY_WEIGHT);
 				return 1;
 			}
 			break;
@@ -152,16 +152,16 @@ int CField::Fight()
 					m_pPlayerCopy->RenderInventory();
 					cout << "사용하고자 하는 아이템의 번호를 입력하시오. (나가기 : 0) : ";
 					cin >> iItemNum;
-				} while (m_pPlayerCopy->Get_m_tInventoryItem(iItemNum - 1).iNumInInventory == 0);
+				} while (m_pPlayerCopy->Get_m_pInventory()->Get_m_tInventoryItem(iItemNum - 1).iNumInInventory == 0);
 				
 				switch (iItemNum)
 				{
 				case(POTION):
-					m_pPlayerCopy->Minus_m_tInventory_ItemNum(iItemNum - 1);
+					m_pPlayerCopy->Get_m_pInventory()->Minus_m_tInventory_ItemNum(iItemNum - 1);
 					m_pPlayerCopy->PlusHealth(g_tItemArray[iItemNum - 1].iWeight);
 					break;
 				case(AMPLIFIER):
-					m_pPlayerCopy->Minus_m_tInventory_ItemNum(iItemNum - 1);
+					m_pPlayerCopy->Get_m_pInventory()->Minus_m_tInventory_ItemNum(iItemNum - 1);
 					m_pPlayerCopy->PlusAttackPower(g_tItemArray[iItemNum - 1].iWeight);
 					break;
 				case(0):

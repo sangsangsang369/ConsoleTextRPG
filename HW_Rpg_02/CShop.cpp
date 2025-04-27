@@ -44,10 +44,10 @@ void CShop::Update()
 		case(1):
 			cout << "구매할 상품 번호를 입력하시오 :";
 			cin >> iItemInput;
-			if (m_pPlayerCopy->Get_m_iMoney() >= m_tItemArrayInShop[iItemInput - 1].iCost)
+			if (m_pPlayerCopy->Get_m_pInventory()->Get_m_iMoney() >= m_tItemArrayInShop[iItemInput - 1].iCost)
 			{
-				m_pPlayerCopy->SpendMoney(m_tItemArrayInShop[iItemInput-1].iCost);
-				m_pPlayerCopy->Plus_m_tInventory_ItemNum(iItemInput - 1);
+				m_pPlayerCopy->Get_m_pInventory()->MinusMoney(m_tItemArrayInShop[iItemInput-1].iCost);
+				m_pPlayerCopy->Get_m_pInventory()->Plus_m_tInventory_ItemNum(iItemInput - 1);
 				cout << "구매 완료" << endl;
 				system("pause");
 			}

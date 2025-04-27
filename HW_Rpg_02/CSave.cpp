@@ -57,9 +57,9 @@ void CSave::Save(CObject* _pCPlayer, DATA _tMonster)
 	m_tDataArray[1] = _tMonster;
 	for (int i = 0; i < ALL_ITEM_TYPE_NUM; i++)
 	{
-		m_tInventory[i] = _pCPlayer->Get_m_tInventoryItem(i);
+		m_tInventory[i] = _pCPlayer->Get_m_pInventory()->Get_m_tInventoryItem(i);
 	}
-	m_iSavedMoney = _pCPlayer->Get_m_iMoney();
+	m_iSavedMoney = _pCPlayer->Get_m_pInventory()->Get_m_iMoney();
 
 	errno_t err = fopen_s(&m_pFile, "../Data/SaveFile.txt", "wb");
 

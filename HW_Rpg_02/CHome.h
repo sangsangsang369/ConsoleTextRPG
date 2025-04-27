@@ -8,6 +8,7 @@ public:
 	CHome();
 	~CHome();
 
+public:
 	static CHome* Create();
 
 public:

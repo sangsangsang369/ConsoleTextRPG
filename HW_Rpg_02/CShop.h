@@ -6,7 +6,7 @@
 class CShop
 {
 private:
-	ITEM m_tItemArrayInShop[ALL_ITEM_TYPE_NUM];
+	ITEM	 m_tItemArrayInShop[ALL_ITEM_TYPE_NUM];
 	CObject* m_pPlayerCopy;
 
 public:
@@ -15,13 +15,13 @@ public:
 
 public:
 	static CShop* Create();
-	void Set_pPlayerCopy(CObject* _pPlayer) { m_pPlayerCopy = _pPlayer; };
+	void	Set_pPlayerCopy(CObject* _pPlayer) { m_pPlayerCopy = _pPlayer; };
 
 public:
 	void	Initialize();
 	void	Update();
 	void	Release();
 
-	void Render() const;
+	void	Render() const;
 };
 
