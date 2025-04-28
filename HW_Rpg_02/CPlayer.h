@@ -13,8 +13,9 @@ public:
 	static CObject* Create(DATA _tObject, ITEM* _pInventory, int _iMoney);
 
 public:
-	void	Render() const;
-	void	RenderInventory() const;
+	void	Render() const override;
+	void	RenderInventory() const override;
+
 	void	SelectJob();
 };
 

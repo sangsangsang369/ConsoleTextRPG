@@ -30,6 +30,5 @@ public:
 public:
 	virtual void Render() const;
 	virtual void RenderInventory() const;
-	virtual void SelectJob();
 };
 

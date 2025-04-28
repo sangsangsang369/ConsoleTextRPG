@@ -15,6 +15,6 @@ public:
 	static CObject* Create(int _iName, int _iHealth, int _iAttackPower);
 
 public:
-	void Render() const;
+	void Render() const override;
 };
 

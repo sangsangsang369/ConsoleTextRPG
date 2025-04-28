@@ -43,6 +43,3 @@ void CObject::RenderInventory() const
 {
 }
 
-void CObject::SelectJob()
-{
-}

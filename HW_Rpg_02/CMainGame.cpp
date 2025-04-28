@@ -56,7 +56,7 @@ void CMainGame::Initialize()
 		{
 			m_pPlayer = CPlayer::Create();
 		}	
-		m_pPlayer->SelectJob();
+		dynamic_cast<CPlayer*>(m_pPlayer)->SelectJob();
 
 		if (!m_pField)
 		{
